@@ -10,7 +10,16 @@ exibirTextoNaTela('p', 'Digite um número entre 1 e 10');
 
 function verificarChute() {
     let chute = document.querySelector('input').value;
-    console.log(chute == numeroSecreto);
+    if (chute == numeroSecreto) {
+        exibirTextoNaTela('h1', 'Acertou!');
+        exibirTextoNaTela('p', `Você acertou o número secreto ${numeroSecreto}. Parabéns!`);
+    } else {
+        if (chute > numeroSecreto) {
+            exibirTextoNaTela('p', `O número é menor que ${chute}`);
+        } else {
+            exibirTextoNaTela('p', `O número é maior que ${chute}`);
+        }
+    }
 }
 
 function novoJogo() {
